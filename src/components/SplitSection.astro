@@ -1,76 +1,94 @@
 ---
+import controlInventario from '../assets/control-inventario.webp';
+import reducePerdidas from '../assets/reduce-perdidas.webp';
+import impulsaCrecimiento from '../assets/impulsa-crecimiento.webp';
+import gestionaLotes from '../assets/gestiona-lotes.webp';
 ---
 
-<div id="beneficios" class="w-full max-w-[1440px] mx-auto px-16 py-20 flex flex-col gap-20 items-center justify-center">
-	<div class="flex flex-col items-start gap-6 w-full max-w-[640px]">
-		<div class="flex flex-col items-start gap-2 w-full">
-			<h2 class="font-Inter font-semibold text-[48px] leading-[56px] text-[#030217] text-center w-full">
+<!-- Full width wrapper -->
+<div class="w-full bg-white">
+	<div id="beneficios" class="max-w-[1200px] mx-auto px-16 sm:px-16 lg:px-12 py-16 sm:py-20 lg:py-24 box-border">
+		<!-- Section Header -->
+		<div class="flex flex-col items-center gap-6 lg:gap-8 mb-16 lg:mb-20">
+			<h2 class="font-Inter font-semibold text-3xl sm:text-4xl lg:text-[48px] leading-tight lg:leading-[56px] text-[#030217] text-center max-w-[800px]">
 				Un control de inventario diseñado para que vendas más y te estreses menos
 			</h2>
 		</div>
-	</div>
 
-	<div class="flex gap-8 items-center w-[950px]">
-		<div class="w-[480px] h-[400px] bg-gray-200 bg-left bg-no-repeat"></div>
-		<div class="flex-1 flex flex-col gap-6 items-start max-w-[640px]">
-			<div class="flex flex-col gap-2 items-start w-full text-[#030217]">
-				<h3 class="font-Inter font-semibold text-[32px] leading-[40px] w-full">
+		<!-- Split Section 1: Control Total -->
+		<div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center mb-16 lg:mb-20">
+			<div class="w-full lg:w-1/2 flex justify-center">
+				<img 
+					src={controlInventario.src} 
+					alt="Control de inventario en tiempo real" 
+					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
+				/>
+			</div>
+			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
+				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
 					Ten control total con tu inventario en un solo lugar
 				</h3>
-				<p class="font-Inter font-normal text-base leading-6 w-full">
+				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
 					Dile adiós al cuaderno y a las hojas de cálculo. Con StockTrack, centralizas tus productos en una plataforma intuitiva y accesible desde cualquier lugar. Sabrás exactamente qué tienes y dónde está, en tiempo real.
 				</p>
 			</div>
 		</div>
-	</div>
-</div>
 
-<div class="w-full max-w-[1440px] mx-auto px-16 pt-20 pb-0 flex flex-col gap-20 items-center justify-center">
-	<div class="flex gap-8 items-center w-[950px]">
-		<div class="flex-1 flex flex-col gap-6 items-start max-w-[640px]">
-			<div class="flex flex-col gap-2 items-start w-full text-[#030217]">
-				<h3 class="font-Inter font-semibold text-[32px] leading-[40px] w-full">
+		<!-- Split Section 2: Reduce Pérdidas -->
+		<div class="flex flex-col lg:flex-row-reverse gap-8 lg:gap-16 items-center mb-16 lg:mb-20">
+			<div class="w-full lg:w-1/2 flex justify-center">
+				<img 
+					src={reducePerdidas.src} 
+					alt="Sistema de alertas para reducir pérdidas" 
+					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
+				/>
+			</div>
+			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
+				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
 					Reduce las pérdidas a cero con alertas automáticas
 				</h3>
-				<p class="font-Inter font-normal text-base leading-6 w-full">
+				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
 					Deja de perder dinero por productos vencidos o por quedarte sin tu producto más vendido. StockTrack te notifica cuando un artículo requiere tu atención, para que puedas actuar a tiempo y nunca perder una venta.
 				</p>
 			</div>
 		</div>
-		<div class="w-[504px] h-[400px] bg-gray-200 bg-no-repeat"></div>
-	</div>
-</div>
 
-<div class="w-full max-w-[1440px] mx-auto px-16 py-20 gap-32 flex items-center justify-center">
-	<div class="flex gap-8 items-center w-[950px]">
-		<div class="flex-1 bg-gray-200 h-[400px] overflow-hidden rounded-[4px] bg-cover bg-center relative">
-		</div>
-		<div class="flex-1 flex flex-col gap-6 items-start max-w-[640px]">
-			<div class="flex flex-col gap-2 items-start w-full text-[#030217]">
-				<h3 class="font-Inter font-semibold text-[32px] leading-[40px] w-full">
+		<!-- Split Section 3: Impulsa Crecimiento -->
+		<div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center mb-16 lg:mb-20">
+			<div class="w-full lg:w-1/2 flex justify-center">
+				<img 
+					src={impulsaCrecimiento.src} 
+					alt="Reportes y análisis para impulsar el crecimiento" 
+					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
+				/>
+			</div>
+			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
+				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
 					Impulsa tu crecimiento con decisiones basadas en datos
 				</h3>
-				<p class="font-Inter font-normal text-base leading-6 w-full">
+				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
 					¿Qué producto te deja más ganancias? StockTrack transforma tus movimientos de inventario en reportes claros que te ayudan a entender tu negocio. Compra mejor y enfócate en los productos que de verdad importan.
 				</p>
 			</div>
 		</div>
-	</div>
-</div>
 
-<div class="w-full max-w-[1440px] mx-auto px-16 py-20 flex flex-col gap-[52px] items-center justify-center">
-	<div class="flex gap-8 items-center w-[950px]">
-		<div class="flex-1 flex flex-col gap-6 items-start max-w-[640px]">
-			<div class="flex flex-col gap-2 items-start w-full text-[#030217]">
-				<h3 class="font-Inter font-semibold text-[32px] leading-[40px] w-full">
+		<!-- Split Section 4: Gestiona Lotes -->
+		<div class="flex flex-col lg:flex-row-reverse gap-8 lg:gap-16 items-center">
+			<div class="w-full lg:w-1/2 flex justify-center">
+				<img 
+					src={gestionaLotes.src} 
+					alt="Gestión avanzada de lotes y vencimientos" 
+					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
+				/>
+			</div>
+			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
+				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
 					Gestiona lotes, vencimientos y kits sin complicaciones
 				</h3>
-				<p class="font-Inter font-normal text-base leading-6 w-full">
+				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
 					Para negocios que necesitan más control, StockTrack hace que la gestión avanzada sea increíblemente simple. Asigna lotes, controla vencimientos y crea paquetes de productos en segundos para optimizar tus ventas.
 				</p>
 			</div>
-		</div>
-		<div class="flex-1 bg-gray-200 h-[400px] overflow-hidden rounded-[4px] bg-cover bg-center relative">
 		</div>
 	</div>
 </div>
