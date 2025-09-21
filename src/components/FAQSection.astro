@@ -1,0 +1,179 @@
+---
+// FAQ accordion section - Full width and responsive
+---
+
+<div class="w-full bg-white">
+	<div id="faq" class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 box-border flex flex-col items-center">
+	<div class="flex flex-col items-center gap-8 w-full">
+		<!-- Textual heading -->
+		<div class="flex flex-col items-center gap-4 lg:gap-6 w-full max-w-[640px]">
+			<div class="flex flex-col items-center gap-2 lg:gap-4 w-full text-[#030217] text-center">
+				<h2 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[48px] leading-tight sm:leading-tight lg:leading-[56px] w-full">
+					¿Tienes dudas?
+				</h2>
+				<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-5 sm:leading-6 lg:leading-7 w-full">
+					Aquí resolvemos tus preguntas más frecuentes.
+				</p>
+			</div>
+		</div>
+
+		<!-- Accordion -->
+		<div class="flex flex-col items-start w-full max-w-[800px]">
+			<!-- Accordion Item 1 -->
+			<div class="w-full border-t border-b border-[#cbcee1] relative">
+				<button 
+					class="flex gap-4 items-center w-full py-4 lg:py-6 text-left transition-colors"
+					onclick="toggleFAQ('faq-1')"
+				>
+					<div class="flex-1 font-Inter font-normal text-[#030217]">
+						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">¿Necesito tarjeta de crédito para empezar?</p>
+					</div>
+					<div class="hover:bg-[#FFC64D] flex items-center justify-center p-2 lg:p-3 rounded-lg transition-all duration-300 ease-in-out">
+						<div class="w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center">
+							<svg id="faq-1-icon" class="w-3 h-3 lg:w-4 lg:h-4 transition-transform duration-200" viewBox="0 0 16 16" fill="none">
+								<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+					</div>
+				</button>
+				<div id="faq-1" class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+					<div class="pb-4 lg:pb-6 px-0">
+						<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] w-full">
+							No, no necesitas tarjeta de crédito para empezar. Nuestro plan básico es completamente gratuito y puedes probar el plan Emprendedor durante 14 días sin costo alguno. Solo necesitas registrarte con tu correo electrónico para comenzar a usar StockTrack inmediatamente.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Accordion Item 2 -->
+			<div class="w-full border-b border-[#cbcee1] relative">
+				<button 
+					class="flex gap-4 items-center w-full py-4 lg:py-6 text-left transition-colors"
+					onclick="toggleFAQ('faq-2')"
+				>
+					<div class="flex-1 font-Inter font-normal text-[#030217]">
+						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">¿Qué pasa después de los 14 días de prueba gratuita?</p>
+					</div>
+					<div class="hover:bg-[#FFC64D] flex items-center justify-center p-2 lg:p-3 rounded-lg transition-all duration-300 ease-in-out">
+						<div class="w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center">
+							<svg id="faq-2-icon" class="w-3 h-3 lg:w-4 lg:h-4 transition-transform duration-200" viewBox="0 0 16 16" fill="none">
+								<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+					</div>
+				</button>
+				<div id="faq-2" class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+					<div class="pb-4 lg:pb-6 px-0">
+						<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] w-full">
+							Después de los 14 días de prueba, puedes elegir continuar con el plan gratuito básico (que incluye hasta 100 productos y 1 usuario) o suscribirte a uno de nuestros planes de pago para acceder a más funcionalidades. No hay compromisos y puedes cancelar en cualquier momento.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Accordion Item 3 -->
+			<div class="w-full border-b border-[#cbcee1] relative">
+				<button 
+					class="flex gap-4 items-center w-full py-4 lg:py-6 text-left transition-colors"
+					onclick="toggleFAQ('faq-3')"
+				>
+					<div class="flex-1 font-Inter font-normal text-[#030217]">
+						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">¿Puedo cambiar de plan en cualquier momento?</p>
+					</div>
+					<div class="hover:bg-[#FFC64D] flex items-center justify-center p-2 lg:p-3 rounded-lg transition-all duration-300 ease-in-out">
+						<div class="w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center">
+							<svg id="faq-3-icon" class="w-3 h-3 lg:w-4 lg:h-4 transition-transform duration-200" viewBox="0 0 16 16" fill="none">
+								<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+					</div>
+				</button>
+				<div id="faq-3" class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+					<div class="pb-4 lg:pb-6 px-0">
+						<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] w-full">
+							Sí, puedes actualizar o degradar tu plan en cualquier momento desde tu panel de control. Los cambios de plan se aplican inmediatamente y la facturación se ajusta proporcionalmente. Si actualizas a un plan superior, solo pagas la diferencia por el tiempo restante del periodo de facturación.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Accordion Item 4 -->
+			<div class="w-full border-b border-[#cbcee1] relative">
+				<button 
+					class="flex gap-4 items-center w-full py-4 lg:py-6 text-left transition-colors"
+					onclick="toggleFAQ('faq-4')"
+				>
+					<div class="flex-1 font-Inter font-normal text-[#030217]">
+						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">¿Qué pasa si cancelo mi cuenta?</p>
+					</div>
+					<div class="hover:bg-[#FFC64D] flex items-center justify-center p-2 lg:p-3 rounded-lg transition-all duration-300 ease-in-out">
+						<div class="w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center">
+							<svg id="faq-4-icon" class="w-3 h-3 lg:w-4 lg:h-4 transition-transform duration-200" viewBox="0 0 16 16" fill="none">
+								<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+					</div>
+				</button>
+				<div id="faq-4" class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+					<div class="pb-4 lg:pb-6 px-0">
+						<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] w-full">
+							Si cancelas tu cuenta, mantendrás acceso a tus datos durante 30 días para que puedas exportar tu información si lo necesitas. Después de este periodo, todos los datos se eliminan permanentemente de nuestros servidores. Puedes reactivar tu cuenta en cualquier momento durante estos 30 días sin perder información.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Accordion Item 5 -->
+			<div class="w-full border-b border-[#cbcee1] relative">
+				<button 
+					class="flex gap-4 items-center w-full py-4 lg:py-6 text-left transition-colors"
+					onclick="toggleFAQ('faq-5')"
+				>
+					<div class="flex-1 font-Inter font-normal text-[#030217]">
+						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">¿Qué tipo de soporte ofrecen si tengo alguna duda o problema?</p>
+					</div>
+					<div class="hover:bg-[#FFC64D] flex items-center justify-center p-2 lg:p-3 rounded-lg transition-all duration-300 ease-in-out">
+						<div class="w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center">
+							<svg id="faq-5-icon" class="w-3 h-3 lg:w-4 lg:h-4 transition-transform duration-200" viewBox="0 0 16 16" fill="none">
+								<path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+					</div>
+				</button>
+				<div id="faq-5" class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+					<div class="pb-4 lg:pb-6 px-0">
+						<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] w-full">
+							Ofrecemos soporte por correo electrónico para todos los planes. Los usuarios del plan Emprendedor y Empresa tienen acceso a soporte prioritario por WhatsApp con tiempos de respuesta más rápidos. También contamos con una base de conocimientos completa, tutoriales en video y guías paso a paso para ayudarte a aprovechar al máximo StockTrack.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+
+<script>
+	// Toggle FAQ accordion
+	function toggleFAQ(faqId: string) {
+		const content = document.getElementById(faqId);
+		const icon = document.getElementById(faqId + '-icon');
+		
+		if (content && icon) {
+			const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+			
+			if (isOpen) {
+				// Close
+				content.style.maxHeight = '0px';
+				icon.style.transform = 'rotate(0deg)';
+			} else {
+				// Open
+				content.style.maxHeight = content.scrollHeight + 'px';
+				icon.style.transform = 'rotate(180deg)';
+			}
+		}
+	}
+
+	// Make toggleFAQ globally available
+	(window as any).toggleFAQ = toggleFAQ;
+</script>
