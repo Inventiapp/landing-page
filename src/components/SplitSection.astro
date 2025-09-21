@@ -3,6 +3,7 @@ import controlInventario from '../assets/control-inventario.webp';
 import reducePerdidas from '../assets/reduce-perdidas.webp';
 import impulsaCrecimiento from '../assets/impulsa-crecimiento.webp';
 import gestionaLotes from '../assets/gestiona-lotes.webp';
+import CTASection from './CTASection.astro';
 ---
 
 <!-- Full width wrapper -->
@@ -35,7 +36,7 @@ import gestionaLotes from '../assets/gestiona-lotes.webp';
 		</div>
 
 		<!-- Split Section 2: Reduce Pérdidas -->
-		<div class="flex flex-col lg:flex-row-reverse gap-8 lg:gap-16 items-center mb-16 lg:mb-20">
+		<div class="flex flex-col lg:flex-row-reverse gap-8 lg:gap-16 items-center">
 			<div class="w-full lg:w-1/2 flex justify-center">
 				<img 
 					src={reducePerdidas.src} 
@@ -52,7 +53,15 @@ import gestionaLotes from '../assets/gestiona-lotes.webp';
 				</p>
 			</div>
 		</div>
+	</div>
+</div>
 
+<!-- CTA Section embedded between benefits -->
+<CTASection />
+
+<!-- Continuing Split Section -->
+<div class="w-full bg-white">
+	<div class="max-w-[1200px] mx-auto px-16 sm:px-16 lg:px-12 py-16 sm:py-20 lg:py-24 box-border">
 		<!-- Split Section 3: Impulsa Crecimiento -->
 		<div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center mb-16 lg:mb-20">
 			<div class="w-full lg:w-1/2 flex justify-center">
