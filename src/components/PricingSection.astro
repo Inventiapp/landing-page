@@ -1,0 +1,1033 @@
+---
+// Pricing section with 3 plan cards matching Figma design
+---
+
+<!-- Full width wrapper -->
+<div class="w-full bg-white">
+	<div
+		id="planes"
+		class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 box-border flex flex-col items-center"
+	>
+		<div class="flex flex-col items-center gap-8 w-full">
+			<!-- Textual heading -->
+			<div class="flex flex-col items-start gap-6 w-full max-w-[800px]">
+				<div class="flex flex-col items-start gap-2 w-full">
+					<h2
+						class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[48px] leading-tight lg:leading-[56px] text-[#030217] text-center w-full"
+					>
+						Planes simples y transparentes
+					</h2>
+				</div>
+			</div>
+
+			<!-- Filter - Toggle Switch -->
+			<div class="flex items-center justify-center w-full">
+				<div class="flex items-center gap-4 py-3">
+					<span
+						id="monthly-label"
+						class="font-Inter font-normal text-base text-[#030217] leading-6 cursor-pointer transition-all"
+						>Mensual</span
+					>
+					<div
+						class="relative w-12 h-6 cursor-pointer"
+						id="pricing-toggle"
+					>
+						<div
+							class="w-full h-full bg-gray-300 rounded-full transition-all duration-300"
+						>
+						</div>
+						<div
+							id="toggle-circle"
+							class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300"
+						>
+						</div>
+					</div>
+					<span
+						id="annual-label"
+						class="font-Inter font-normal text-base text-[#030217] leading-6 cursor-pointer transition-all"
+					>
+						Anual <span
+							class="font-Inter font-bold text-xs text-[#ffa22a]"
+							>(Ahorra 20%)</span
+						>
+					</span>
+				</div>
+			</div>
+
+			<!-- Table - Pricing Cards -->
+			<div
+				class="flex flex-col lg:grid lg:grid-cols-3 gap-4 lg:gap-8 items-stretch w-full px-4 sm:px-0"
+			>
+				<!-- Plan Emprendedor (Más Popular) - Mobile First -->
+				<div
+					class="bg-white rounded-lg border-2 border-[#ffa22a] shadow-[0px_25px_66px_-20px_rgba(0,16,53,0.24)] relative lg:order-2 w-full"
+				>
+					<div
+						class="flex flex-col gap-3 lg:gap-4 items-start overflow-hidden px-4 lg:px-6 py-4 lg:py-8 w-full"
+					>
+						<!-- Popular Tag -->
+						<div
+							class="absolute top-0 right-0 bg-[#ffa22a] rounded-bl-[6px] px-2 py-0.5"
+						>
+							<span
+								class="font-Inter font-semibold text-sm text-white leading-5"
+								>Más popular</span
+							>
+						</div>
+
+						<!-- Textual heading -->
+						<div class="flex flex-col gap-2 lg:gap-4 items-start w-full">
+							<div
+								class="flex flex-col gap-1 items-start w-full text-[#030217]"
+							>
+								<h3
+									class="font-Inter font-semibold text-lg lg:text-2xl leading-tight lg:leading-8 w-full"
+								>
+									Plan Emprendedor
+								</h3>
+								<p
+									class="font-Inter font-normal text-sm lg:text-base leading-5 lg:leading-6 w-full hidden lg:block"
+								>
+									Perfecto para negocios en crecimiento que
+									buscan automatizar y optimizar.
+								</p>
+							</div>
+						</div>
+
+						<!-- Amount -->
+						<div
+							class="flex items-baseline gap-2 font-Inter font-semibold text-[#030217] w-full"
+						>
+							<div class="flex flex-col">
+								<div class="flex items-baseline gap-2">
+									<span
+										id="emprendedor-price"
+										class="text-2xl lg:text-[40px] leading-tight lg:leading-[48px]"
+										>S/49</span
+									>
+									<span
+										id="emprendedor-period"
+										class="text-xs leading-4 tracking-[0.48px] uppercase"
+										>/ MES</span
+									>
+								</div>
+								<span
+									id="emprendedor-annual-price"
+									class="text-sm lg:text-lg text-gray-500 line-through hidden"
+									>S/588</span
+								>
+							</div>
+						</div>
+
+						<!-- Button -->
+						<button
+							class="bg-[#ffa22a] border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+						>
+							<span
+								class="font-Inter font-semibold text-sm lg:text-base text-white leading-6"
+								>Probar 14 días gratis</span
+							>
+						</button>
+
+						<!-- Mobile Details Button -->
+						<button
+							class="lg:hidden w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-lg text-left hover:bg-gray-50 transition-colors"
+							onclick="toggleDetails('emprendedor')"
+						>
+							<span class="font-Inter font-medium text-base text-[#030217]">Detalles</span>
+							<svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="emprendedor-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
+
+						<!-- Features List - Hidden on mobile by default -->
+						<div id="emprendedor-details" class="lg:flex flex-col gap-2 items-start w-full hidden">
+							<div class="flex flex-col items-start w-full">
+								<!-- Feature items -->
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										1 Usuario
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Hasta 100 productos registrados
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Entradas y salidas de inventario
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Reporte de Stock Actual
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Alertas de Stock y Vencimiento
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Creación de Kits y Paquetes
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Reportes Avanzados
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Roles y Permisos Avanzados
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Soporte Prioritario por WhatsApp
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Plan Básico (Gratuito) -->
+				<div
+					class="bg-white rounded-lg border border-[rgba(7,22,112,0.21)] relative lg:order-1 w-full"
+				>
+					<div
+						class="flex flex-col gap-3 lg:gap-4 items-start overflow-hidden px-4 lg:px-6 py-4 lg:py-8 w-full"
+					>
+						<!-- Textual heading -->
+						<div class="flex flex-col gap-2 lg:gap-4 items-start w-full">
+							<div
+								class="flex flex-col gap-1 items-start w-full text-[#030217]"
+							>
+								<h3
+									class="font-Inter font-semibold text-lg lg:text-2xl leading-tight lg:leading-8 w-full"
+								>
+									Plan Básico (Gratuito)
+								</h3>
+								<p
+									class="font-Inter font-normal text-sm lg:text-base leading-5 lg:leading-6 w-full hidden lg:block"
+								>
+									Ideal para dueños de pequeñas bodegas que
+									recién empiezan a digitalizarse.
+								</p>
+							</div>
+						</div>
+
+						<!-- Amount -->
+						<div
+							class="flex items-baseline gap-2 font-Inter font-semibold text-[#030217] w-full"
+						>
+							<span
+								class="text-2xl lg:text-[40px] leading-tight lg:leading-[48px]"
+								>S/0</span
+							>
+							<span
+								id="basic-period"
+								class="text-xs leading-4 tracking-[0.48px] uppercase"
+								>/ MES</span
+							>
+						</div>
+
+						<!-- Button -->
+						<button
+							class="bg-white border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+						>
+							<span
+								class="font-Inter font-semibold text-sm lg:text-base text-[#030217] leading-6"
+								>Seleccionar este plan</span
+							>
+						</button>
+
+						<!-- Mobile Details Button -->
+						<button
+							class="lg:hidden w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-lg text-left hover:bg-gray-50 transition-colors"
+							onclick="toggleDetails('basic')"
+						>
+							<span class="font-Inter font-medium text-base text-[#030217]">Detalles</span>
+							<svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="basic-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
+
+						<!-- Features List - Hidden on mobile by default -->
+						<div id="basic-details" class="lg:flex flex-col gap-2 items-start w-full hidden">
+							<div class="flex flex-col items-start w-full">
+								<!-- Feature items -->
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										1 Usuario
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Hasta 100 productos registrados
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Entradas y salidas de inventario
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Reporte de Stock Actual
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Alertas de Stock y Vencimiento
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Creación de Kits y Paquetes
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Reportes Avanzados
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Roles y Permisos Avanzados
+									</p>
+								</div>
+								<div
+									class="flex gap-3 items-start py-2 w-full opacity-50"
+								>
+									<div
+										class="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-gray-400"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M18 6l-12 12"></path>
+											<path d="M6 6l12 12"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Soporte Prioritario por WhatsApp
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Plan Empresa -->
+				<div
+					class="bg-white rounded-lg border border-[rgba(7,22,112,0.21)] relative lg:order-3 w-full"
+				>
+					<div
+						class="flex flex-col gap-3 lg:gap-4 items-start overflow-hidden px-4 lg:px-6 py-4 lg:py-8 w-full"
+					>
+						<!-- Textual heading -->
+						<div class="flex flex-col gap-2 lg:gap-4 items-start w-full">
+							<div
+								class="flex flex-col gap-1 items-start w-full text-[#030217]"
+							>
+								<h3
+									class="font-Inter font-semibold text-lg lg:text-2xl leading-tight lg:leading-8 w-full"
+								>
+									Plan Empresa
+								</h3>
+								<p
+									class="font-Inter font-normal text-sm lg:text-base leading-5 lg:leading-6 w-full hidden lg:block"
+								>
+									La solución completa para equipos y
+									operaciones más grandes.
+								</p>
+							</div>
+						</div>
+
+						<!-- Amount -->
+						<div
+							class="flex items-baseline gap-2 font-Inter font-semibold text-[#030217] w-full"
+						>
+							<div class="flex flex-col">
+								<div class="flex items-baseline gap-2">
+									<span
+										id="empresa-price"
+										class="text-2xl lg:text-[40px] leading-tight lg:leading-[48px]"
+										>S/199</span
+									>
+									<span
+										id="empresa-period"
+										class="text-xs leading-4 tracking-[0.48px] uppercase"
+										>/ MES</span
+									>
+								</div>
+								<span
+									id="empresa-annual-price"
+									class="text-sm lg:text-lg text-gray-500 line-through hidden"
+									>S/2,388</span
+								>
+							</div>
+						</div>
+
+						<!-- Button -->
+						<button
+							class="bg-white border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+						>
+							<span
+								class="font-Inter font-semibold text-sm lg:text-base text-[#030217] leading-6"
+								>Contactar ventas</span
+							>
+						</button>
+
+						<!-- Mobile Details Button -->
+						<button
+							class="lg:hidden w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-lg text-left hover:bg-gray-50 transition-colors"
+							onclick="toggleDetails('empresa')"
+						>
+							<span class="font-Inter font-medium text-base text-[#030217]">Detalles</span>
+							<svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="empresa-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
+
+						<!-- Features List - Hidden on mobile by default -->
+						<div id="empresa-details" class="lg:flex flex-col gap-2 items-start w-full hidden">
+							<div class="flex flex-col items-start w-full">
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Hasta 15 Usuarios
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Productos Ilimitados
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Entradas y salidas de inventario
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Reporte de Stock Actual
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Alertas de Stock y Vencimiento
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Creación de Kits y Paquetes
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Reportes Avanzados
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Roles y Permisos Avanzados
+									</p>
+								</div>
+								<div class="flex gap-3 items-start py-2 w-full">
+									<div
+										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
+									>
+										<svg
+											class="w-3 h-3 text-[#ffc64d]"
+											fill="none"
+											stroke="currentColor"
+											viewBox="0 0 24 24"
+											stroke-width="3"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										>
+											<path d="M5 12l5 5l10 -10"></path>
+										</svg>
+									</div>
+									<p
+										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
+									>
+										Soporte Prioritario por WhatsApp
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const toggle = document.getElementById("pricing-toggle")!;
+			const toggleCircle = document.getElementById("toggle-circle")!;
+			const monthlyLabel = document.getElementById("monthly-label")!;
+			const annualLabel = document.getElementById("annual-label")!;
+
+			// Price elements
+			const basicPeriod = document.getElementById("basic-period")!;
+			const emprendedorPrice =
+				document.getElementById("emprendedor-price")!;
+			const emprendedorPeriod =
+				document.getElementById("emprendedor-period")!;
+			const emprendedorAnnualPrice = document.getElementById(
+				"emprendedor-annual-price",
+			)!;
+			const empresaPrice = document.getElementById("empresa-price")!;
+			const empresaPeriod = document.getElementById("empresa-period")!;
+			const empresaAnnualPrice = document.getElementById(
+				"empresa-annual-price",
+			)!;
+
+			let isAnnual = false;
+
+			function updatePricing() {
+				if (isAnnual) {
+					// Switch to Annual
+					toggleCircle.style.transform = "translateX(24px)";
+					toggle.children[0].classList.add("bg-[#ffa22a]");
+					toggle.children[0].classList.remove("bg-gray-300");
+					monthlyLabel.classList.add("opacity-60");
+					annualLabel.classList.remove("opacity-60");
+
+					// Update prices
+					basicPeriod.textContent = "/ AÑO";
+					emprendedorPrice.textContent = "S/470";
+					emprendedorPeriod.textContent = "/ AÑO";
+					emprendedorAnnualPrice.textContent = "S/588";
+					emprendedorAnnualPrice.classList.remove("hidden");
+					empresaPrice.textContent = "S/1,910";
+					empresaPeriod.textContent = "/ AÑO";
+					empresaAnnualPrice.textContent = "S/2,388";
+					empresaAnnualPrice.classList.remove("hidden");
+				} else {
+					// Switch to Monthly
+					toggleCircle.style.transform = "translateX(0px)";
+					toggle.children[0].classList.remove("bg-[#ffa22a]");
+					toggle.children[0].classList.add("bg-gray-300");
+					monthlyLabel.classList.remove("opacity-60");
+					annualLabel.classList.add("opacity-60");
+
+					// Update prices
+					basicPeriod.textContent = "/ MES";
+					emprendedorPrice.textContent = "S/49";
+					emprendedorPeriod.textContent = "/ MES";
+					emprendedorAnnualPrice.classList.add("hidden");
+					empresaPrice.textContent = "S/199";
+					empresaPeriod.textContent = "/ MES";
+					empresaAnnualPrice.classList.add("hidden");
+				}
+			}
+
+			function togglePricing() {
+				isAnnual = !isAnnual;
+				updatePricing();
+			}
+
+			// Event listeners
+			toggle.addEventListener("click", togglePricing);
+			monthlyLabel.addEventListener("click", function () {
+				if (isAnnual) togglePricing();
+			});
+			annualLabel.addEventListener("click", function () {
+				if (!isAnnual) togglePricing();
+			});
+
+		// Initialize
+		updatePricing();
+	});
+
+	// Toggle details dropdown for mobile
+	function toggleDetails(plan: string) {
+		const details = document.getElementById(plan + '-details');
+		const chevron = document.getElementById(plan + '-chevron');
+		
+		if (details && chevron) {
+			const isHidden = details.classList.contains('hidden');
+			
+			if (isHidden) {
+				details.classList.remove('hidden');
+				details.classList.add('flex');
+				chevron.style.transform = 'rotate(180deg)';
+			} else {
+				details.classList.add('hidden');
+				details.classList.remove('flex');
+				chevron.style.transform = 'rotate(0deg)';
+			}
+		}
+	}
+
+	// Make toggleDetails globally available
+	(window as any).toggleDetails = toggleDetails;
+</script>
+</div>
