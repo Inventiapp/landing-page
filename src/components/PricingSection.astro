@@ -1,15 +1,12 @@
 ---
-// Pricing section with 3 plan cards matching Figma design
 ---
 
-<!-- Full width wrapper -->
 <div class="w-full bg-white">
 	<div
 		id="planes"
 		class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 box-border flex flex-col items-center"
 	>
 		<div class="flex flex-col items-center gap-8 w-full">
-			<!-- Textual heading -->
 			<div class="flex flex-col items-start gap-6 w-full max-w-[800px]">
 				<div class="flex flex-col items-start gap-2 w-full">
 					<h2
@@ -20,7 +17,6 @@
 				</div>
 			</div>
 
-			<!-- Filter - Toggle Switch -->
 			<div class="flex items-center justify-center w-full">
 				<div class="flex items-center gap-4 py-3">
 					<span
@@ -54,18 +50,15 @@
 				</div>
 			</div>
 
-			<!-- Table - Pricing Cards -->
 			<div
 				class="flex flex-col lg:grid lg:grid-cols-3 gap-4 lg:gap-8 items-stretch w-full px-4 sm:px-0"
 			>
-				<!-- Plan Emprendedor (Más Popular) - Mobile First -->
 				<div
 					class="bg-white rounded-lg border-2 border-[#ffa22a] shadow-[0px_25px_66px_-20px_rgba(0,16,53,0.24)] relative lg:order-2 w-full"
 				>
 					<div
 						class="flex flex-col gap-3 lg:gap-4 items-start overflow-hidden px-4 lg:px-6 py-4 lg:py-8 w-full"
 					>
-						<!-- Popular Tag -->
 						<div
 							class="absolute top-0 right-0 bg-[#ffa22a] rounded-bl-[6px] px-2 py-0.5"
 						>
@@ -75,7 +68,6 @@
 							>
 						</div>
 
-						<!-- Textual heading -->
 						<div class="flex flex-col gap-2 lg:gap-4 items-start w-full">
 							<div
 								class="flex flex-col gap-1 items-start w-full text-[#030217]"
@@ -94,7 +86,6 @@
 							</div>
 						</div>
 
-						<!-- Amount -->
 						<div
 							class="flex items-baseline gap-2 font-Inter font-semibold text-[#030217] w-full"
 						>
@@ -119,7 +110,6 @@
 							</div>
 						</div>
 
-						<!-- Button -->
 						<button
 							class="bg-[#ffa22a] border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
 						>
@@ -129,7 +119,6 @@
 							>
 						</button>
 
-						<!-- Mobile Details Button -->
 						<button
 							class="lg:hidden w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-lg text-left hover:bg-gray-50 transition-colors"
 							onclick="toggleDetails('emprendedor')"
@@ -140,10 +129,8 @@
 							</svg>
 						</button>
 
-						<!-- Features List - Hidden on mobile by default -->
 						<div id="emprendedor-details" class="lg:flex flex-col gap-2 items-start w-full hidden">
 							<div class="flex flex-col items-start w-full">
-								<!-- Feature items -->
 								<div class="flex gap-3 items-start py-2 w-full">
 									<div
 										class="w-6 h-6 bg-[#ffc64d]/20 rounded-full flex items-center justify-center flex-shrink-0"
@@ -994,7 +981,6 @@
 				updatePricing();
 			}
 
-			// Event listeners
 			toggle.addEventListener("click", togglePricing);
 			monthlyLabel.addEventListener("click", function () {
 				if (isAnnual) togglePricing();
@@ -1003,7 +989,6 @@
 				if (!isAnnual) togglePricing();
 			});
 
-		// Initialize
 		updatePricing();
 	});
 
