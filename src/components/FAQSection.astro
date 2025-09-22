@@ -154,11 +154,9 @@
 			const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
 			
 			if (isOpen) {
-				// Close
 				content.style.maxHeight = '0px';
 				icon.style.transform = 'rotate(0deg)';
 			} else {
-				// Open
 				content.style.maxHeight = content.scrollHeight + 'px';
 				icon.style.transform = 'rotate(180deg)';
 			}
