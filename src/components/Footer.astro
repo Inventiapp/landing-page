@@ -1,5 +1,9 @@
 ---
 import logoAlternative from '../assets/logo-alternative.png';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="w-full bg-gradient-to-b from-[#FFF] to-[#FFC64D]/60">
@@ -18,7 +22,7 @@ import logoAlternative from '../assets/logo-alternative.png';
 				
 				<div class="flex flex-col items-center w-full">
 					<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] text-center w-full max-w-[500px]">
-						Simplificando el inventario para que los pequeños negocios de Latinoamérica puedan crecer.
+						{t('footer.description')}
 					</p>
 				</div>
 			</div>
@@ -49,7 +53,7 @@ import logoAlternative from '../assets/logo-alternative.png';
 
 			<div class="flex items-center justify-center w-full">
 				<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#474b69] text-center">
-					© 2025 StockTrack.
+					{t('footer.copyright')}
 				</p>
 			</div>
 		</div>

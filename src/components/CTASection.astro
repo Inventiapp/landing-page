@@ -1,18 +1,28 @@
 
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <div class="w-full bg-gradient-to-b from-[#FFC64D]/60 to-[#FFF]">
 	<div class="max-w-[1200px] mx-auto px-16 sm:px-8 lg:px-12 box-border">
 		<div class="relative p-8 sm:p-12 lg:p-16">
 			<div class="flex flex-col items-center gap-6 lg:gap-8 w-full max-w-[800px] mx-auto">
 				<h2 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217] text-center">
-					¿Suena bien? Compruébalo por ti mismo
+					{t('cta.title')}
 				</h2>
 				
 				<div class="flex flex-col items-center gap-2">
-					<button class="bg-[#ffa22a] border-2 border-[#030217] rounded-lg px-4 sm:px-6 py-3 shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all">
-						<span class="font-Inter font-semibold text-sm sm:text-base text-white leading-6">Empezar prueba gratuita de 14 días</span>
-					</button>
+					<a href="https://stocktrack-frontend.vercel.app/auth/register"
+						class="bg-[#ffa22a] border-2 border-[#030217] rounded-lg px-4 sm:px-6 py-3 shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+						aria-label={t('cta.button')}
+					>
+						<span class="font-Inter font-semibold text-sm sm:text-base text-white leading-6">{t('cta.button')}</span>
+					</a>
 					<p class="font-Inter font-normal text-xs sm:text-sm leading-4 text-[#030217] text-center">
-						Sin tarjeta de crédito. Sin compromisos.
+						{t('cta.disclaimer')}
 					</p>
 				</div>
 			</div>

@@ -1,16 +1,20 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import controlInventario from '../assets/control-inventario.webp';
 import reducePerdidas from '../assets/reduce-perdidas.webp';
 import impulsaCrecimiento from '../assets/impulsa-crecimiento.webp';
 import gestionaLotes from '../assets/gestiona-lotes.webp';
 import CTASection from './CTASection.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="w-full bg-white">
 	<div id="beneficios" class="max-w-[1200px] mx-auto px-16 sm:px-16 lg:px-12 py-16 sm:py-20 lg:py-24 box-border">
 		<div class="flex flex-col items-center gap-6 lg:gap-8 mb-16 lg:mb-20">
 			<h2 class="font-Inter font-semibold text-3xl sm:text-4xl lg:text-[48px] leading-tight lg:leading-[56px] text-[#030217] text-center max-w-[800px]">
-				Un control de inventario diseñado para que vendas más y te estreses menos
+				{t('split.mainTitle')}
 			</h2>
 		</div>
 
@@ -18,16 +22,16 @@ import CTASection from './CTASection.astro';
 			<div class="w-full lg:w-1/2 flex justify-center">
 				<img 
 					src={controlInventario.src} 
-					alt="Control de inventario en tiempo real" 
+					alt={t('split.benefit1.alt')}
 					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
 				/>
 			</div>
 			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
 				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
-					Ten control total con tu inventario en un solo lugar
+					{t('split.benefit1.title')}
 				</h3>
 				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
-					Dile adiós al cuaderno y a las hojas de cálculo. Con StockTrack, centralizas tus productos en una plataforma intuitiva y accesible desde cualquier lugar. Sabrás exactamente qué tienes y dónde está, en tiempo real.
+					{t('split.benefit1.desc')}
 				</p>
 			</div>
 		</div>
@@ -36,16 +40,16 @@ import CTASection from './CTASection.astro';
 			<div class="w-full lg:w-1/2 flex justify-center">
 				<img 
 					src={reducePerdidas.src} 
-					alt="Sistema de alertas para reducir pérdidas" 
+					alt={t('split.benefit2.alt')}
 					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
 				/>
 			</div>
 			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
 				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
-					Reduce las pérdidas a cero con alertas automáticas
+					{t('split.benefit2.title')}
 				</h3>
 				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
-					Deja de perder dinero por productos vencidos o por quedarte sin tu producto más vendido. StockTrack te notifica cuando un artículo requiere tu atención, para que puedas actuar a tiempo y nunca perder una venta.
+					{t('split.benefit2.desc')}
 				</p>
 			</div>
 		</div>
@@ -60,16 +64,16 @@ import CTASection from './CTASection.astro';
 			<div class="w-full lg:w-1/2 flex justify-center">
 				<img 
 					src={impulsaCrecimiento.src} 
-					alt="Reportes y análisis para impulsar el crecimiento" 
+					alt={t('split.benefit3.alt')}
 					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
 				/>
 			</div>
 			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
 				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
-					Impulsa tu crecimiento con decisiones basadas en datos
+					{t('split.benefit3.title')}
 				</h3>
 				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
-					¿Qué producto te deja más ganancias? StockTrack transforma tus movimientos de inventario en reportes claros que te ayudan a entender tu negocio. Compra mejor y enfócate en los productos que de verdad importan.
+					{t('split.benefit3.desc')}
 				</p>
 			</div>
 		</div>
@@ -78,16 +82,16 @@ import CTASection from './CTASection.astro';
 			<div class="w-full lg:w-1/2 flex justify-center">
 				<img 
 					src={gestionaLotes.src} 
-					alt="Gestión avanzada de lotes y vencimientos" 
+					alt={t('split.benefit4.alt')}
 					class="w-[280px] sm:w-[350px] lg:w-[420px] h-[180px] sm:h-[220px] lg:h-[280px] object-contain rounded-lg"
 				/>
 			</div>
 			<div class="w-full lg:w-1/2 flex flex-col gap-4 lg:gap-6">
 				<h3 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[32px] leading-tight lg:leading-[40px] text-[#030217]">
-					Gestiona lotes, vencimientos y kits sin complicaciones
+					{t('split.benefit4.title')}
 				</h3>
 				<p class="font-Inter font-normal text-base lg:text-lg leading-6 lg:leading-7 text-[#030217]">
-					Para negocios que necesitan más control, StockTrack hace que la gestión avanzada sea increíblemente simple. Asigna lotes, controla vencimientos y crea paquetes de productos en segundos para optimizar tus ventas.
+					{t('split.benefit4.desc')}
 				</p>
 			</div>
 		</div>

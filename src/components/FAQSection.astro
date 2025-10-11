@@ -1,14 +1,21 @@
 
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <div class="w-full bg-white">
 	<div id="faq" class="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 box-border flex flex-col items-center">
 	<div class="flex flex-col items-center gap-8 w-full">
 		<div class="flex flex-col items-center gap-4 lg:gap-6 w-full max-w-[640px]">
 			<div class="flex flex-col items-center gap-2 lg:gap-4 w-full text-[#030217] text-center">
 				<h2 class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[48px] leading-tight sm:leading-tight lg:leading-[56px] w-full">
-					¿Tienes dudas?
+					{t('faq.title')}
 				</h2>
 				<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-5 sm:leading-6 lg:leading-7 w-full">
-					Aquí resolvemos tus preguntas más frecuentes.
+					{t('faq.subtitle')}
 				</p>
 			</div>
 		</div>
@@ -18,9 +25,11 @@
 				<button 
 					class="flex gap-4 items-center w-full py-4 lg:py-6 text-left transition-colors"
 					onclick="toggleFAQ('faq-1')"
+					aria-expanded="false"
+					aria-controls="faq-1"
 				>
 					<div class="flex-1 font-Inter font-normal text-[#030217]">
-						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">¿Necesito tarjeta de crédito para empezar?</p>
+						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">{t('faq.q1.question')}</p>
 					</div>
 					<div class="hover:bg-[#FFC64D] flex items-center justify-center p-2 lg:p-3 rounded-lg transition-all duration-300 ease-in-out">
 						<div class="w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center">
@@ -33,7 +42,7 @@
 				<div id="faq-1" class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
 					<div class="pb-4 lg:pb-6 px-0">
 						<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] w-full">
-							No, no necesitas tarjeta de crédito para empezar. Nuestro plan básico es completamente gratuito y puedes probar el plan Emprendedor durante 14 días sin costo alguno. Solo necesitas registrarte con tu correo electrónico para comenzar a usar StockTrack inmediatamente.
+							{t('faq.q1.answer')}
 						</p>
 					</div>
 				</div>
@@ -43,9 +52,11 @@
 				<button 
 					class="flex gap-4 items-center w-full py-4 lg:py-6 text-left transition-colors"
 					onclick="toggleFAQ('faq-2')"
+					aria-expanded="false"
+					aria-controls="faq-2"
 				>
 					<div class="flex-1 font-Inter font-normal text-[#030217]">
-						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">¿Qué pasa después de los 14 días de prueba gratuita?</p>
+						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">{t('faq.q2.question')}</p>
 					</div>
 					<div class="hover:bg-[#FFC64D] flex items-center justify-center p-2 lg:p-3 rounded-lg transition-all duration-300 ease-in-out">
 						<div class="w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center">
@@ -58,7 +69,7 @@
 				<div id="faq-2" class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
 					<div class="pb-4 lg:pb-6 px-0">
 						<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] w-full">
-							Después de los 14 días de prueba, puedes elegir continuar con el plan gratuito básico (que incluye hasta 100 productos y 1 usuario) o suscribirte a uno de nuestros planes de pago para acceder a más funcionalidades. No hay compromisos y puedes cancelar en cualquier momento.
+							{t('faq.q2.answer')}
 						</p>
 					</div>
 				</div>
@@ -68,9 +79,11 @@
 				<button 
 					class="flex gap-4 items-center w-full py-4 lg:py-6 text-left transition-colors"
 					onclick="toggleFAQ('faq-3')"
+					aria-expanded="false"
+					aria-controls="faq-3"
 				>
 					<div class="flex-1 font-Inter font-normal text-[#030217]">
-						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">¿Puedo cambiar de plan en cualquier momento?</p>
+						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">{t('faq.q3.question')}</p>
 					</div>
 					<div class="hover:bg-[#FFC64D] flex items-center justify-center p-2 lg:p-3 rounded-lg transition-all duration-300 ease-in-out">
 						<div class="w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center">
@@ -83,7 +96,7 @@
 				<div id="faq-3" class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
 					<div class="pb-4 lg:pb-6 px-0">
 						<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] w-full">
-							Sí, puedes actualizar o degradar tu plan en cualquier momento desde tu panel de control. Los cambios de plan se aplican inmediatamente y la facturación se ajusta proporcionalmente. Si actualizas a un plan superior, solo pagas la diferencia por el tiempo restante del periodo de facturación.
+							{t('faq.q3.answer')}
 						</p>
 					</div>
 				</div>
@@ -93,9 +106,11 @@
 				<button 
 					class="flex gap-4 items-center w-full py-4 lg:py-6 text-left transition-colors"
 					onclick="toggleFAQ('faq-4')"
+					aria-expanded="false"
+					aria-controls="faq-4"
 				>
 					<div class="flex-1 font-Inter font-normal text-[#030217]">
-						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">¿Qué pasa si cancelo mi cuenta?</p>
+						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">{t('faq.q4.question')}</p>
 					</div>
 					<div class="hover:bg-[#FFC64D] flex items-center justify-center p-2 lg:p-3 rounded-lg transition-all duration-300 ease-in-out">
 						<div class="w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center">
@@ -108,7 +123,7 @@
 				<div id="faq-4" class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
 					<div class="pb-4 lg:pb-6 px-0">
 						<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] w-full">
-							Si cancelas tu cuenta, mantendrás acceso a tus datos durante 30 días para que puedas exportar tu información si lo necesitas. Después de este periodo, todos los datos se eliminan permanentemente de nuestros servidores. Puedes reactivar tu cuenta en cualquier momento durante estos 30 días sin perder información.
+							{t('faq.q4.answer')}
 						</p>
 					</div>
 				</div>
@@ -118,9 +133,11 @@
 				<button 
 					class="flex gap-4 items-center w-full py-4 lg:py-6 text-left transition-colors"
 					onclick="toggleFAQ('faq-5')"
+					aria-expanded="false"
+					aria-controls="faq-5"
 				>
 					<div class="flex-1 font-Inter font-normal text-[#030217]">
-						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">¿Qué tipo de soporte ofrecen si tengo alguna duda o problema?</p>
+						<p class="font-Inter font-bold text-sm sm:text-base lg:text-lg leading-6">{t('faq.q5.question')}</p>
 					</div>
 					<div class="hover:bg-[#FFC64D] flex items-center justify-center p-2 lg:p-3 rounded-lg transition-all duration-300 ease-in-out">
 						<div class="w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center">
@@ -133,7 +150,7 @@
 				<div id="faq-5" class="overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
 					<div class="pb-4 lg:pb-6 px-0">
 						<p class="font-Inter font-normal text-sm sm:text-base lg:text-lg leading-6 lg:leading-7 text-[#030217] w-full">
-							Ofrecemos soporte por correo electrónico para todos los planes. Los usuarios del plan Emprendedor y Empresa tienen acceso a soporte prioritario por WhatsApp con tiempos de respuesta más rápidos. También contamos con una base de conocimientos completa, tutoriales en video y guías paso a paso para ayudarte a aprovechar al máximo StockTrack.
+							{t('faq.q5.answer')}
 						</p>
 					</div>
 				</div>
@@ -147,16 +164,19 @@
 	function toggleFAQ(faqId: string) {
 		const content = document.getElementById(faqId);
 		const icon = document.getElementById(faqId + '-icon');
+		const button = document.querySelector(`button[aria-controls="${faqId}"]`);
 		
-		if (content && icon) {
+		if (content && icon && button) {
 			const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
 			
 			if (isOpen) {
 				content.style.maxHeight = '0px';
 				icon.style.transform = 'rotate(0deg)';
+				button.setAttribute('aria-expanded', 'false');
 			} else {
 				content.style.maxHeight = content.scrollHeight + 'px';
 				icon.style.transform = 'rotate(180deg)';
+				button.setAttribute('aria-expanded', 'true');
 			}
 		}
 	}

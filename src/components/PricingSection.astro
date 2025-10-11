@@ -1,3 +1,9 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
 
 <div class="w-full bg-white">
 	<div
@@ -10,7 +16,7 @@
 					<h2
 						class="font-Inter font-semibold text-2xl sm:text-3xl lg:text-[48px] leading-tight lg:leading-[56px] text-[#030217] text-center w-full"
 					>
-						Planes simples y transparentes
+						{t('pricing.title')}
 					</h2>
 				</div>
 			</div>
@@ -20,7 +26,7 @@
 					<span
 						id="monthly-label"
 						class="font-Inter font-normal text-base text-[#030217] leading-6 cursor-pointer transition-all"
-						>Mensual</span
+						>{t('pricing.monthly')}</span
 					>
 					<div
 						class="relative w-12 h-6 cursor-pointer"
@@ -40,9 +46,9 @@
 						id="annual-label"
 						class="font-Inter font-normal text-base text-[#030217] leading-6 cursor-pointer transition-all"
 					>
-						Anual <span
+						{t('pricing.annual')} <span
 							class="font-Inter font-bold text-xs text-[#ffa22a]"
-							>(Ahorra 20%)</span
+							>({t('pricing.annualSave')})</span
 						>
 					</span>
 				</div>
@@ -62,7 +68,7 @@
 						>
 							<span
 								class="font-Inter font-semibold text-sm text-white leading-5"
-								>Más popular</span
+								>{t('pricing.popular')}</span
 							>
 						</div>
 
@@ -73,13 +79,12 @@
 								<h3
 									class="font-Inter font-semibold text-lg lg:text-2xl leading-tight lg:leading-8 w-full"
 								>
-									Plan Emprendedor
+									{t('pricing.emprendedor.name')}
 								</h3>
 								<p
 									class="font-Inter font-normal text-sm lg:text-base leading-5 lg:leading-6 w-full hidden lg:block"
 								>
-									Perfecto para negocios en crecimiento que
-									buscan automatizar y optimizar.
+									{t('pricing.emprendedor.desc')}
 								</p>
 							</div>
 						</div>
@@ -92,42 +97,40 @@
 									<span
 										id="emprendedor-price"
 										class="text-2xl lg:text-[40px] leading-tight lg:leading-[48px]"
-										>S/49</span
+										>S/</span
 									>
 									<span
 										id="emprendedor-period"
 										class="text-xs leading-4 tracking-[0.48px] uppercase"
-										>/ MES</span
-									>
+										>{t('pricing.perMonth')}</span>
 								</div>
 								<span
 									id="emprendedor-annual-price"
 									class="text-sm lg:text-lg text-gray-500 line-through hidden"
-									>S/588</span
-								>
+									>S/588</span>
 							</div>
 						</div>
 
-						<button
-							class="bg-[#ffa22a] border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+					<a
+						href="https://stocktrack-frontend.vercel.app/auth/register"
+						class="bg-[#ffa22a] border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all no-underline text-center block"
+						aria-label={t('pricing.emprendedor.cta')}
+					>	
+						<span
+							class="font-Inter font-semibold text-sm lg:text-base text-white leading-6"
+							>{t('pricing.emprendedor.cta')}</span
 						>
-							<span
-								class="font-Inter font-semibold text-sm lg:text-base text-white leading-6"
-								>Probar 14 días gratis</span
-							>
-						</button>
-
-						<button
+					</a>						<button
 							class="lg:hidden w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-lg text-left hover:bg-gray-50 transition-colors"
 							onclick="toggleDetails('emprendedor')"
+							aria-expanded="false"
+							aria-controls="emprendedor-details"
 						>
-							<span class="font-Inter font-medium text-base text-[#030217]">Detalles</span>
-							<svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="emprendedor-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<span class="font-Inter font-medium text-base text-[#030217]">{t('pricing.details')}</span>
+			<svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="emprendedor-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 							</svg>
-						</button>
-
-						<div id="emprendedor-details" class="lg:flex flex-col gap-2 items-start w-full hidden">
+						</button>						<div id="emprendedor-details" class="lg:flex flex-col gap-2 items-start w-full hidden">
 							<div class="flex flex-col items-start w-full">
 								<div class="flex gap-3 items-start py-2 w-full">
 									<div
@@ -148,7 +151,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										1 Usuario
+										{t('pricing.emprendedor.feature1')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -170,7 +173,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Hasta 100 productos registrados
+										{t('pricing.emprendedor.feature2')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -192,7 +195,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Entradas y salidas de inventario
+										{t('pricing.emprendedor.feature3')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -214,7 +217,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Reporte de Stock Actual
+										{t('pricing.emprendedor.feature4')}
 									</p>
 								</div>
 								<div
@@ -239,7 +242,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Alertas de Stock y Vencimiento
+										{t('pricing.emprendedor.feature5')}
 									</p>
 								</div>
 								<div
@@ -264,7 +267,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Creación de Kits y Paquetes
+										{t('pricing.emprendedor.feature6')}
 									</p>
 								</div>
 								<div
@@ -289,7 +292,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Reportes Avanzados
+										{t('pricing.emprendedor.feature7')}
 									</p>
 								</div>
 								<div
@@ -314,7 +317,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Roles y Permisos Avanzados
+										{t('pricing.emprendedor.feature8')}
 									</p>
 								</div>
 								<div
@@ -339,7 +342,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Soporte Prioritario por WhatsApp
+										{t('pricing.emprendedor.feature9')}
 									</p>
 								</div>
 							</div>
@@ -360,13 +363,12 @@
 								<h3
 									class="font-Inter font-semibold text-lg lg:text-2xl leading-tight lg:leading-8 w-full"
 								>
-									Plan Básico (Gratuito)
+									{t('pricing.basic.name')}
 								</h3>
 								<p
 									class="font-Inter font-normal text-sm lg:text-base leading-5 lg:leading-6 w-full hidden lg:block"
 								>
-									Ideal para dueños de pequeñas bodegas que
-									recién empiezan a digitalizarse.
+									{t('pricing.basic.desc')}
 								</p>
 							</div>
 						</div>
@@ -376,29 +378,31 @@
 						>
 							<span
 								class="text-2xl lg:text-[40px] leading-tight lg:leading-[48px]"
-								>S/0</span
+								>{t('pricing.basic.price')}</span
 							>
 							<span
 								id="basic-period"
 								class="text-xs leading-4 tracking-[0.48px] uppercase"
-								>/ MES</span
+								>{t('pricing.perMonth')}</span
 							>
 						</div>
 
-						<button
-							class="bg-white border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+					<a
+						href="https://stocktrack-frontend.vercel.app/auth/register"
+						class="bg-white border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all no-underline text-center block"
+						aria-label={t('pricing.basic.cta')}
+					>
+						<span
+							class="font-Inter font-semibold text-sm lg:text-base text-[#030217] leading-6"
+							>{t('pricing.basic.cta')}</span
 						>
-							<span
-								class="font-Inter font-semibold text-sm lg:text-base text-[#030217] leading-6"
-								>Seleccionar este plan</span
-							>
-						</button>
-
-						<button
+					</a>						<button
 							class="lg:hidden w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-lg text-left hover:bg-gray-50 transition-colors"
 							onclick="toggleDetails('basic')"
+							aria-expanded="false"
+							aria-controls="basic-details"
 						>
-							<span class="font-Inter font-medium text-base text-[#030217]">Detalles</span>
+							<span class="font-Inter font-medium text-base text-[#030217]">{t('pricing.details')}</span>
 							<svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="basic-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 							</svg>
@@ -425,7 +429,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										1 Usuario
+										{t('pricing.basic.feature1')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -447,7 +451,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Hasta 100 productos registrados
+										{t('pricing.basic.feature2')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -469,7 +473,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Entradas y salidas de inventario
+										{t('pricing.basic.feature3')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -491,7 +495,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Reporte de Stock Actual
+										{t('pricing.basic.feature4')}
 									</p>
 								</div>
 								<div
@@ -516,7 +520,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Alertas de Stock y Vencimiento
+										{t('pricing.basic.feature5')}
 									</p>
 								</div>
 								<div
@@ -541,7 +545,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Creación de Kits y Paquetes
+										{t('pricing.basic.feature6')}
 									</p>
 								</div>
 								<div
@@ -566,7 +570,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Reportes Avanzados
+										{t('pricing.basic.feature7')}
 									</p>
 								</div>
 								<div
@@ -591,7 +595,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Roles y Permisos Avanzados
+										{t('pricing.basic.feature8')}
 									</p>
 								</div>
 								<div
@@ -616,7 +620,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Soporte Prioritario por WhatsApp
+										{t('pricing.basic.feature9')}
 									</p>
 								</div>
 							</div>
@@ -637,13 +641,12 @@
 								<h3
 									class="font-Inter font-semibold text-lg lg:text-2xl leading-tight lg:leading-8 w-full"
 								>
-									Plan Empresa
+									{t('pricing.empresa.name')}
 								</h3>
 								<p
 									class="font-Inter font-normal text-sm lg:text-base leading-5 lg:leading-6 w-full hidden lg:block"
 								>
-									La solución completa para equipos y
-									operaciones más grandes.
+									{t('pricing.empresa.desc')}
 								</p>
 							</div>
 						</div>
@@ -656,36 +659,38 @@
 									<span
 										id="empresa-price"
 										class="text-2xl lg:text-[40px] leading-tight lg:leading-[48px]"
-										>S/199</span
+										>{t('pricing.empresa.priceMonthly')}</span
 									>
 									<span
 										id="empresa-period"
 										class="text-xs leading-4 tracking-[0.48px] uppercase"
-										>/ MES</span
+										>{t('pricing.perMonth')}</span
 									>
 								</div>
 								<span
 									id="empresa-annual-price"
 									class="text-sm lg:text-lg text-gray-500 line-through hidden"
-									>S/2,388</span
+									>{t('pricing.empresa.priceAnnualOriginal')}</span
 								>
 							</div>
 						</div>
 
-						<button
-							class="bg-white border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+					<a
+						href="mailto:"
+						class="bg-white border-2 border-[#030217] rounded-lg px-4 py-3 w-full shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all no-underline text-center block"
+						aria-label={t('pricing.empresa.cta')}
+					>
+						<span
+							class="font-Inter font-semibold text-sm lg:text-base text-[#030217] leading-6"
+							>{t('pricing.empresa.cta')}</span
 						>
-							<span
-								class="font-Inter font-semibold text-sm lg:text-base text-[#030217] leading-6"
-								>Contactar ventas</span
-							>
-						</button>
-
-						<button
+					</a>						<button
 							class="lg:hidden w-full flex items-center justify-between px-4 py-2 border border-gray-200 rounded-lg text-left hover:bg-gray-50 transition-colors"
 							onclick="toggleDetails('empresa')"
+							aria-expanded="false"
+							aria-controls="empresa-details"
 						>
-							<span class="font-Inter font-medium text-base text-[#030217]">Detalles</span>
+							<span class="font-Inter font-medium text-base text-[#030217]">{t('pricing.details')}</span>
 							<svg class="w-4 h-4 text-gray-400 transition-transform duration-200" id="empresa-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 							</svg>
@@ -712,7 +717,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Hasta 15 Usuarios
+										{t('pricing.empresa.feature1')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -734,7 +739,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Productos Ilimitados
+										{t('pricing.empresa.feature2')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -756,7 +761,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Entradas y salidas de inventario
+										{t('pricing.empresa.feature3')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -778,7 +783,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Reporte de Stock Actual
+										{t('pricing.empresa.feature4')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -800,7 +805,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Alertas de Stock y Vencimiento
+										{t('pricing.empresa.feature5')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -822,7 +827,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Creación de Kits y Paquetes
+										{t('pricing.empresa.feature6')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -844,7 +849,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Reportes Avanzados
+										{t('pricing.empresa.feature7')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -866,7 +871,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Roles y Permisos Avanzados
+										{t('pricing.empresa.feature8')}
 									</p>
 								</div>
 								<div class="flex gap-3 items-start py-2 w-full">
@@ -888,7 +893,7 @@
 									<p
 										class="font-Inter font-normal text-sm sm:text-base leading-5 sm:leading-6 text-[#030217] flex-1"
 									>
-										Soporte Prioritario por WhatsApp
+										{t('pricing.empresa.feature9')}
 									</p>
 								</div>
 							</div>
@@ -899,27 +904,36 @@
 		</div>
 	</div>
 
-	<script>
+	<script define:vars={{ 
+		perMonth: t('pricing.perMonth'), 
+		perYear: t('pricing.perYear'),
+		emprendedorMonthly: t('pricing.emprendedor.priceMonthly'),
+		emprendedorAnnual: t('pricing.emprendedor.priceAnnual'),
+		emprendedorAnnualOriginal: t('pricing.emprendedor.priceAnnualOriginal'),
+		empresaMonthly: t('pricing.empresa.priceMonthly'),
+		empresaAnnual: t('pricing.empresa.priceAnnual'),
+		empresaAnnualOriginal: t('pricing.empresa.priceAnnualOriginal')
+	}}>
 		document.addEventListener("DOMContentLoaded", function () {
-			const toggle = document.getElementById("pricing-toggle")!;
-			const toggleCircle = document.getElementById("toggle-circle")!;
-			const monthlyLabel = document.getElementById("monthly-label")!;
-			const annualLabel = document.getElementById("annual-label")!;
+			const toggle = document.getElementById("pricing-toggle");
+			const toggleCircle = document.getElementById("toggle-circle");
+			const monthlyLabel = document.getElementById("monthly-label");
+			const annualLabel = document.getElementById("annual-label");
 
 			// Price elements
-			const basicPeriod = document.getElementById("basic-period")!;
+			const basicPeriod = document.getElementById("basic-period");
 			const emprendedorPrice =
-				document.getElementById("emprendedor-price")!;
+				document.getElementById("emprendedor-price");
 			const emprendedorPeriod =
-				document.getElementById("emprendedor-period")!;
+				document.getElementById("emprendedor-period");
 			const emprendedorAnnualPrice = document.getElementById(
 				"emprendedor-annual-price",
-			)!;
-			const empresaPrice = document.getElementById("empresa-price")!;
-			const empresaPeriod = document.getElementById("empresa-period")!;
+			);
+			const empresaPrice = document.getElementById("empresa-price");
+			const empresaPeriod = document.getElementById("empresa-period");
 			const empresaAnnualPrice = document.getElementById(
 				"empresa-annual-price",
-			)!;
+			);
 
 			let isAnnual = false;
 
@@ -929,39 +943,37 @@
 					toggleCircle.style.transform = "translateX(24px)";
 					toggle.children[0].classList.add("bg-[#ffa22a]");
 					toggle.children[0].classList.remove("bg-gray-300");
-					monthlyLabel.classList.add("opacity-60");
-					annualLabel.classList.remove("opacity-60");
+				monthlyLabel.classList.add("opacity-60");
+				annualLabel.classList.remove("opacity-60");
 
-					// Update prices
-					basicPeriod.textContent = "/ AÑO";
-					emprendedorPrice.textContent = "S/470";
-					emprendedorPeriod.textContent = "/ AÑO";
-					emprendedorAnnualPrice.textContent = "S/588";
-					emprendedorAnnualPrice.classList.remove("hidden");
-					empresaPrice.textContent = "S/1,910";
-					empresaPeriod.textContent = "/ AÑO";
-					empresaAnnualPrice.textContent = "S/2,388";
-					empresaAnnualPrice.classList.remove("hidden");
-				} else {
-					// Switch to Monthly
-					toggleCircle.style.transform = "translateX(0px)";
-					toggle.children[0].classList.remove("bg-[#ffa22a]");
-					toggle.children[0].classList.add("bg-gray-300");
-					monthlyLabel.classList.remove("opacity-60");
-					annualLabel.classList.add("opacity-60");
+				// Update prices
+				basicPeriod.textContent = perYear;
+				emprendedorPrice.textContent = emprendedorAnnual;
+				emprendedorPeriod.textContent = perYear;
+				emprendedorAnnualPrice.textContent = emprendedorAnnualOriginal;
+				emprendedorAnnualPrice.classList.remove("hidden");
+				empresaPrice.textContent = empresaAnnual;
+				empresaPeriod.textContent = perYear;
+				empresaAnnualPrice.textContent = empresaAnnualOriginal;
+				empresaAnnualPrice.classList.remove("hidden");
+			} else {
+				// Switch to Monthly
+				toggleCircle.style.transform = "translateX(0px)";
+				toggle.children[0].classList.remove("bg-[#ffa22a]");
+				toggle.children[0].classList.add("bg-gray-300");
+				monthlyLabel.classList.remove("opacity-60");
+				annualLabel.classList.add("opacity-60");
 
-					// Update prices
-					basicPeriod.textContent = "/ MES";
-					emprendedorPrice.textContent = "S/49";
-					emprendedorPeriod.textContent = "/ MES";
-					emprendedorAnnualPrice.classList.add("hidden");
-					empresaPrice.textContent = "S/199";
-					empresaPeriod.textContent = "/ MES";
-					empresaAnnualPrice.classList.add("hidden");
-				}
+				// Update prices
+				basicPeriod.textContent = perMonth;
+				emprendedorPrice.textContent = emprendedorMonthly;
+				emprendedorPeriod.textContent = perMonth;
+				emprendedorAnnualPrice.classList.add("hidden");
+				empresaPrice.textContent = empresaMonthly;
+				empresaPeriod.textContent = perMonth;
+				empresaAnnualPrice.classList.add("hidden");
 			}
-
-			function togglePricing() {
+		}			function togglePricing() {
 				isAnnual = !isAnnual;
 				updatePricing();
 			}
@@ -976,11 +988,14 @@
 
 		updatePricing();
 	});
+	</script>
 
+	<script is:inline>
 	// Toggle details dropdown for mobile
-	function toggleDetails(plan: string) {
+	function toggleDetails(plan) {
 		const details = document.getElementById(plan + '-details');
 		const chevron = document.getElementById(plan + '-chevron');
+		const button = document.querySelector(`button[aria-controls="${plan}-details"]`);
 		
 		if (details && chevron) {
 			const isHidden = details.classList.contains('hidden');
@@ -989,15 +1004,17 @@
 				details.classList.remove('hidden');
 				details.classList.add('flex');
 				chevron.style.transform = 'rotate(180deg)';
+				if (button) button.setAttribute('aria-expanded', 'true');
 			} else {
 				details.classList.add('hidden');
 				details.classList.remove('flex');
 				chevron.style.transform = 'rotate(0deg)';
+				if (button) button.setAttribute('aria-expanded', 'false');
 			}
 		}
 	}
 
 	// Make toggleDetails globally available
-	(window as any).toggleDetails = toggleDetails;
+	window.toggleDetails = toggleDetails;
 </script>
 </div>

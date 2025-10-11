@@ -1,5 +1,9 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
-<div class="w-full bg-white">
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
 	<div
 		class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 py-12 sm:py-14 lg:py-16"
 	>
@@ -11,35 +15,33 @@
 					<h1
 						class="font-Inter font-bold text-3xl sm:text-4xl lg:text-[48px] leading-tight lg:leading-[56px] text-[#030217] w-full"
 					>
-						Controla tu inventario, sin errores ni sorpresas
+						{t('hero.title')}
 					</h1>
 					<p
 						class="font-Inter font-normal text-lg leading-7 text-[#030217] w-full"
 					>
-						Diseñado para dueños de bodegas y emprendedores que
-						buscan reducir pérdidas, evitar quiebres de stock y
-						tomar decisiones con datos confiables
+						{t('hero.subtitle')}
 					</p>
-				</div>
-
-				<div class="flex flex-col items-center gap-2 w-full">
-					<button
-						class="bg-[#ffa22a] border-2 border-[#030217] rounded-lg px-6 py-3 shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
-					>
-						<span
-							class="font-Inter font-semibold text-base text-black leading-6"
-							>Prueba StockTrack gratis</span
-						>
-					</button>
-					<p
-						class="font-Inter font-normal text-xs leading-4 text-[#030217]"
-					>
-						14 días gratis <br /> No necesitas tarjeta
-					</p>
-				</div>
 			</div>
 
-			<div class="w-full max-w-4xl mt-2 lg:mt-4 relative">
+			<div class="flex flex-col items-center gap-2 w-full">
+				<a
+					href="https://stocktrack-frontend.vercel.app/auth/register"
+					class="bg-[#ffa22a] border-2 border-[#030217] rounded-lg px-6 py-3 shadow-[2px_2px_0px_0px_#030217] hover:shadow-[1px_1px_0px_0px_#030217] hover:translate-x-[1px] hover:translate-y-[1px] transition-all no-underline"
+					aria-label={t('hero.cta')}
+				>
+					<span
+						class="font-Inter font-semibold text-base text-black leading-6"
+						>{t('hero.cta')}</span
+					>
+				</a>
+				<p
+					class="font-Inter font-normal text-xs leading-4 text-[#030217]"
+				>
+					{t('hero.trial')} <br /> {t('hero.noCard')}
+				</p>
+			</div>
+		</div>			<div class="w-full max-w-4xl mt-2 lg:mt-4 relative">
 				<div
 					class="border-2 border-[#030217] relative w-full h-[350px] sm:h-[400px] lg:h-[420px] bg-white rounded-3xl shadow-2xl overflow-hidden flex"
 				>
@@ -155,10 +157,10 @@
 							<h2
 								class="text-xl font-semibold text-gray-800 mb-1"
 							>
-								Buenos días Usuario
+								{t('hero.greeting')}
 							</h2>
 							<p class="text-sm text-gray-500">
-								Aquí tienes un resumen de tu inventario
+								{t('hero.summary')}
 							</p>
 						</div>
 
@@ -170,7 +172,7 @@
 								<div class="flex items-center justify-between">
 									<div>
 										<p class="text-xs text-gray-500 mb-1">
-											Productos en inventario
+											{t('hero.productsInInventory')}
 										</p>
 										<p
 											class="text-2xl font-bold text-gray-800"
@@ -198,7 +200,7 @@
 								<div class="flex items-center justify-between">
 									<div>
 										<p class="text-xs text-gray-500 mb-1">
-											Categorías activas
+											{t('hero.activeCategories')}
 										</p>
 										<p
 											class="text-2xl font-bold text-gray-800"
@@ -226,7 +228,7 @@
 								<div class="flex items-center justify-between">
 									<div>
 										<p class="text-xs text-gray-500 mb-1">
-											Productos con alertas
+											{t('hero.productsWithAlerts')}
 										</p>
 										<p
 											class="text-2xl font-bold text-gray-800"
@@ -257,7 +259,7 @@
 								<h3
 									class="text-sm font-semibold text-gray-800 mb-4"
 								>
-									Productos más rotativos
+									{t('hero.topRotating')}
 								</h3>
 								<div
 									class="flex items-center justify-center h-28"
@@ -334,7 +336,7 @@
 								3
 							</div>
 							<div class="text-sm font-medium text-gray-600">
-								Productos en riesgo
+								{t('hero.atRisk')}
 							</div>
 						</div>
 						<div class="w-1 h-6 flex flex-col gap-1">
@@ -372,7 +374,7 @@
 								12
 							</div>
 							<div class="text-sm font-medium text-gray-600">
-								Productos con alerta
+								{t('hero.withAlert')}
 							</div>
 						</div>
 						<div class="w-1 h-6 flex flex-col gap-1">
@@ -410,7 +412,7 @@
 								20
 							</div>
 							<div class="text-sm font-medium text-gray-600">
-								Días disponibles
+								{t('hero.daysAvailable')}
 							</div>
 						</div>
 						<div class="w-1 h-6 flex flex-col gap-1">

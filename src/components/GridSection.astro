@@ -1,4 +1,11 @@
 
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <div class="w-full bg-[#FFC64D]/80">
 	<div
 		id="caracteristicas"
@@ -11,7 +18,7 @@
 				<h2
 					class="font-Inter font-semibold text-3xl sm:text-4xl lg:text-[48px] leading-tight lg:leading-[56px] text-[#030217] w-full"
 				>
-					Todo lo que necesitas para tener tu inventario bajo control
+					{t('grid.title')}
 				</h2>
 			</div>
 
@@ -51,14 +58,12 @@
 								<h3
 									class="font-Inter font-semibold text-lg lg:text-xl leading-6 w-full"
 								>
-									Inventario en Tiempo Real
+									{t('grid.feature1.title')}
 								</h3>
 								<p
 									class="font-Inter font-normal text-sm lg:text-base leading-6 w-full"
 								>
-									Conoce tus niveles de stock al instante,
-									desde cualquier lugar y en cualquier
-									dispositivo.
+									{t('grid.feature1.desc')}
 								</p>
 							</div>
 						</div>
@@ -95,13 +100,12 @@
 								<h3
 									class="font-Inter font-semibold text-lg lg:text-xl leading-6 w-full"
 								>
-									Historial de Movimientos
+									{t('grid.feature2.title')}
 								</h3>
 								<p
 									class="font-Inter font-normal text-sm lg:text-base leading-6 w-full"
 								>
-									Rastrea cada entrada, salida o ajuste. Ten
-									una trazabilidad completa de tu inventario.
+									{t('grid.feature2.desc')}
 								</p>
 							</div>
 						</div>
@@ -141,14 +145,12 @@
 								<h3
 									class="font-Inter font-semibold text-lg lg:text-xl leading-6 w-full"
 								>
-									Reportes Visuales
+									{t('grid.feature3.title')}
 								</h3>
 								<p
 									class="font-Inter font-normal text-sm lg:text-base leading-6 w-full"
 								>
-									Entiende qué productos son los más rentables
-									con reportes claros y fáciles de
-									interpretar.
+									{t('grid.feature3.desc')}
 								</p>
 							</div>
 						</div>
@@ -185,14 +187,12 @@
 								<h3
 									class="font-Inter font-semibold text-lg lg:text-xl leading-6 w-full"
 								>
-									Alertas Automáticas
+									{t('grid.feature4.title')}
 								</h3>
 								<p
 									class="font-Inter font-normal text-sm lg:text-base leading-6 w-full"
 								>
-									Recibe notificaciones de stock bajo y
-									productos por vencer antes de que se
-									conviertan en un problema.
+									{t('grid.feature4.desc')}
 								</p>
 							</div>
 						</div>
@@ -234,13 +234,12 @@
 								<h3
 									class="font-Inter font-semibold text-lg lg:text-xl leading-6 w-full"
 								>
-									Control de Vencimientos
+									{t('grid.feature5.title')}
 								</h3>
 								<p
 									class="font-Inter font-normal text-sm lg:text-base leading-6 w-full"
 								>
-									Asigna lotes y fechas de vencimiento a tus
-									productos para reducir las pérdidas a cero.
+									{t('grid.feature5.desc')}
 								</p>
 							</div>
 						</div>
@@ -279,14 +278,12 @@
 								<h3
 									class="font-Inter font-semibold text-lg lg:text-xl leading-6 w-full"
 								>
-									Creación de Kits y Paquetes
+									{t('grid.feature6.title')}
 								</h3>
 								<p
 									class="font-Inter font-normal text-sm lg:text-base leading-6 w-full"
 								>
-									Agrupa productos para crear paquetes o
-									promociones y el sistema ajustará el stock
-									por ti.
+									{t('grid.feature6.desc')}
 								</p>
 							</div>
 						</div>
