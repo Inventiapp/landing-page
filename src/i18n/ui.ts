@@ -61,6 +61,14 @@ export const ui = {
     'cta.button': 'Empezar prueba gratuita de 14 días',
     'cta.disclaimer': 'Sin tarjeta de crédito. Sin compromisos.',
     
+    'aboutTeam.title': 'Conoce al equipo detrás de StockTrack',
+    'aboutTeam.subtitle': 'Somos un grupo de personas apasionadas por ayudar a los pequeños negocios a crecer y digitalizarse.',
+    'aboutTeam.videoTitle': 'Video sobre el equipo de StockTrack',
+    
+    'aboutProduct.title': 'Descubre cómo funciona StockTrack',
+    'aboutProduct.subtitle': 'Mira en acción cómo StockTrack simplifica la gestión de inventario para tu negocio.',
+    'aboutProduct.videoTitle': 'Video demostración de StockTrack',
+    
     'faq.title': '¿Tienes dudas?',
     'faq.subtitle': 'Aquí resolvemos tus preguntas más frecuentes.',
     'faq.q1.question': '¿Necesito tarjeta de crédito para empezar?',
@@ -190,6 +198,14 @@ export const ui = {
     'cta.title': 'Sound good? See it for yourself',
     'cta.button': 'Start 14-day free trial',
     'cta.disclaimer': 'No credit card. No commitments.',
+    
+    'aboutTeam.title': 'Meet the team behind StockTrack',
+    'aboutTeam.subtitle': 'We are a group of people passionate about helping small businesses grow and digitize.',
+    'aboutTeam.videoTitle': 'Video about the StockTrack team',
+    
+    'aboutProduct.title': 'Discover how StockTrack works',
+    'aboutProduct.subtitle': 'See StockTrack in action and how it simplifies inventory management for your business.',
+    'aboutProduct.videoTitle': 'StockTrack demonstration video',
     
     'faq.title': 'Got questions?',
     'faq.subtitle': 'Here we answer your most frequently asked questions.',
